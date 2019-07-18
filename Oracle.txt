@@ -1,0 +1,217 @@
+
+
+-- Creating Student Table
+-- -=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=
+
+create table student_67(
+sno number(3),
+sname varchar2(10),
+sadd varchar2(20),
+sex char(1) check(sex='F' or sex='M'),
+type char(1) check(type='F' or type='P'),
+course varchar2(10),
+jdate date,
+total_fee number(5),
+fee_paid number(5),
+status char(1) check(status='B' or status='C' or status='S'),
+nomod number(2),
+CONSTRAINT CHK_fee check(fee_paid<=total_fee)
+);
+
+desc student_67;
+
+
+
+-- Creating Subjects Table
+-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-
+create table subjects_67(
+sub_code number(5) primary key,
+sub_desc varchar2(20),
+version varchar2(5),
+full_dur varchar2(5),
+part_dur varchar2(5)
+
+)
+
+
+-- Creating Students Marks Table
+-- -=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-
+create table stud_marks_67(
+sno number(3) references student_67(sno),
+sub_code number(5) references subjects_67(sub_code),
+faculty varchar2(10),
+st_date date,
+END_DATE date,
+marks number(3),
+constraint CHK_enddate check(end_date>st_date),
+primary key(sno,sub_code)
+)
+
+
+-- Creating Fees Installments Table
+-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+create table installment_67(
+sno number(3)references student_67(sno),
+inst_no number(2),
+inst_amt number(5),
+pay_date date,
+primary key(sno,inst_no)
+)
+
+
+
+-- -----------------------------------
+desc student_67;                      |
+desc subjects_67;                     |
+desc stud_marks_67;                   |
+desc installment_67;                  |
+                                      |
+select * from student_67;             |  
+select * from subjects_67;            |
+                                      |  
+-- -----------------------------------
+
+
+
+
+-- Inserting Into Student Table
+-- -=-=-=-=--=--=-=-=---=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-==-=-=-=-=
+
+insert into student_67 values(1,'SAMAR','MLK','M','F','IT',to_date('01-jul-17'),10000,1000,'S',4);
+insert into student_67 values(2,'DHIRU','JAWAHAR NAGAR','M','F','CSE',to_date('01-jul-18'),50000,1000,'S',4);
+insert into student_67 values(3,'VASU','JGDMB','M','P','EEE',to_date('01-jul-19'),99000,10000,'S',3);
+insert into student_67 values(4,'ABHI','NAD','M','P','MECH',to_date('01-jul-12'),5000,5000,'C',8);
+insert into student_67 values(5,'RAVI','STEEL PLANT','M','F','ECE',to_date('01-jan-14'),8000,5000,'B',10);
+insert into student_67 values(6,'HARSHA','ANKP','M','F','ECM',to_date('01-jul-14'),9000,9000,'S',3);
+insert into student_67 values(7,'Hari Priya','HOSTEL','F','F','IT',to_date('01-jul-17'),10000,8000,'S',8);
+insert into student_67 values(8,'Sahiti','BHPV','F','F','CSE',to_date('01-jul-18'),50000,1000,'S',4);
+insert into student_67 values(9,'Jyothsna','STEEL PLANT','F','P','EEE',to_date('01-jul-19'),99000,10000,'S',3);
+
+
+-- Inserting Into Subjects Table
+-- -=-=-=-=--=--=-=-=---=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-==-=-=-=-=
+
+insert into subjects_67 values(123,'DBMS','10','6 mon','2 mon');
+insert into subjects_67 values(456,'UP','14.5','6 mon','2 mon');
+insert into subjects_67 values(789,'OS','1','6 mon','2 mon');
+insert into subjects_67 values(234,'HCI','2','6 mon','2 mon');
+insert into subjects_67 values(567,'AJP','1.8','6 mon','4 mon');
+
+
+-- Inserting Into Student Marks Table
+-- -=-=-=-=--=--=-=-=---=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-==-=-=-=-=
+
+insert into stud_marks_67 values(1,123,'SUNDAR','17-jul-19','1-nov-19',90);
+insert into stud_marks_67 values(1,456,'Jyothi','17-jul-19','1-nov-19',100);
+insert into stud_marks_67 values(1,789,'MANI','17-jul-19','1-nov-19',80);
+insert into stud_marks_67 values(1,234,'Bhargavi','17-jul-19','1-nov-19',75);
+insert into stud_marks_67 values(1,567,'REDDY','17-jul-19','1-nov-19',90);
+
+
+insert into stud_marks_67 values(2,123,'SUNDAR','17-jul-18','1-nov-18',95);
+insert into stud_marks_67 values(2,456,'Jyothi','17-jul-18','1-nov-18',98);
+insert into stud_marks_67 values(2,789,'MANI','17-jul-18','1-nov-18',80);
+insert into stud_marks_67 values(2,234,'Bhargavi','17-jul-18','1-nov-18',79);
+insert into stud_marks_67 values(2,567,'REDDY','17-jul-18','1-nov-18',92);
+
+
+insert into stud_marks_67 values(3,123,'SUNDAR','17-jul-19','1-nov-19',99);
+insert into stud_marks_67 values(3,456,'Jyothi','17-jul-19','1-nov-19',100);
+insert into stud_marks_67 values(3,789,'MANI','17-jul-19','1-nov-19',100);
+insert into stud_marks_67 values(3,234,'Bhargavi','17-jul-19','1-nov-19',99);
+insert into stud_marks_67 values(3,567,'REDDY','17-jul-19','1-nov-19',90);
+
+insert into stud_marks_67 values(4,123,'SUNDAR','17-jul-12','1-nov-12',90);
+insert into stud_marks_67 values(4,456,'Jyothi','17-jul-12','1-nov-12',100);
+insert into stud_marks_67 values(4,789,'MANI','17-jul-12','1-nov-12',80);
+insert into stud_marks_67 values(4,234,'Bhargavi','17-jul-12','1-nov-12',75);
+insert into stud_marks_67 values(4,567,'REDDY','17-jul-12','1-nov-12',90);
+
+insert into stud_marks_67 values(5,123,'SUNDAR','17-jul-14','1-nov-14',69);
+insert into stud_marks_67 values(5,456,'Jyothi','17-jul-14','1-nov-14',89);
+insert into stud_marks_67 values(5,789,'MANI','17-jul-14','1-nov-14',69);
+insert into stud_marks_67 values(5,234,'Bhargavi','17-jul-14','1-nov-14',89);
+insert into stud_marks_67 values(5,567,'REDDY','17-jul-14','1-nov-14',69);
+
+insert into stud_marks_67 values(6,123,'SUNDAR','17-jul-14','1-nov-14',90);
+insert into stud_marks_67 values(6,456,'Jyothi','17-jul-14','1-nov-14',100);
+insert into stud_marks_67 values(6,789,'MANI','17-jul-14','1-nov-14',80);
+insert into stud_marks_67 values(6,234,'Bhargavi','17-jul-14','1-nov-14',75);
+insert into stud_marks_67 values(6,567,'REDDY','17-jul-14','1-nov-14',90);
+
+insert into stud_marks_67 values(7,123,'SUNDAR','17-jul-17','1-nov-17',100);
+insert into stud_marks_67 values(7,456,'Jyothi','17-jul-17','1-nov-17',100);
+insert into stud_marks_67 values(7,789,'MANI','17-jul-17','1-nov-17',99);
+insert into stud_marks_67 values(7,234,'Bhargavi','17-jul-17','1-nov-17',99);
+insert into stud_marks_67 values(7,567,'REDDY','17-jul-17','1-nov-17',100);
+
+insert into stud_marks_67 values(8,123,'SUNDAR','17-jul-18','1-nov-18',69);
+insert into stud_marks_67 values(8,456,'Jyothi','17-jul-18','1-nov-18',89);
+insert into stud_marks_67 values(8,789,'MANI','17-jul-18','1-nov-18',69);
+insert into stud_marks_67 values(8,234,'Bhargavi','17-jul-18','1-nov-18',89);
+insert into stud_marks_67 values(8,567,'REDDY','17-jul-18','1-nov-18',69);
+
+
+insert into stud_marks_67 values(9,123,'SUNDAR','17-jul-19','1-nov-19',90);
+insert into stud_marks_67 values(9,456,'Jyothi','17-jul-19','1-nov-19',100);
+insert into stud_marks_67 values(9,789,'MANI','17-jul-19','1-nov-19',80);
+insert into stud_marks_67 values(9,234,'Bhargavi','17-jul-19','1-nov-19',75);
+insert into stud_marks_67 values(9,567,'REDDY','17-jul-19','1-nov-19',90);
+
+select * from stud_marks_67;
+
+
+-- Inserting Into Fees Installements Table
+-- -=-=-=-=--=--=-=-=---=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-==-=-=-=-=
+
+insert into installment_67 values(1,1,2000,to_date('11-jul-19'));
+insert into installment_67 values(1,2,7000,to_date('12-jul-19'));
+insert into installment_67 values(2,1,25000,to_date('12-jul-19'));
+insert into installment_67 values(2,2,24000,to_date('12-jul-19'));
+insert into installment_67 values(3,1,50000,to_date('1-jul-19'));
+insert into installment_67 values(3,2,3000,to_date('11-jul-19'));
+
+
+select * from installment_67 ;
+
+
+
+
+
+-- Arithmetic Functions
+-- =-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+select abs(-2) from dual;
+select abs(2) from dual;
+select ceil(2.1) from dual;
+select floor(2.9) from dual;
+select mod(4,2) from dual;
+select power(2,4) from dual;
+select round(2.1) from dual;
+select round(2.7) from dual;
+select trunc(2.334,1) from dual;
+select trunc(sqrt(2),4) from dual;
+select sign(2) from dual;
+select sign(0) from dual;
+select sign(-4) from dual;
+
+
+-- String Functions
+-- -=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-
+
+select length('hello') from dual;
+select lower('HeLOO') from dual;
+select upper('TestA') from dual;
+select initcap('HELLO WoRLd') from dual;
+select lpad('abc',5) from dual;
+select lpad('ABC',5,'@') from dual
+select rpad('ABC',5,'@') from dual;
+select ltrim('Hello World','ald') from dual;
+select ltrim('Hello World','Hld') from dual;
+select rtrim('HELLO WORLD','DLA') from dual;
+select substr('HELLO WORLD',0,2) from dual;
+select instr('SAMAR KHAN',' ')-1 from dual;
+select substr('ABCD',instr('SAMAR KHAN',' ')-1,10) test from dual;
+select replace('ABCD ABGS ABCDEW ABCSA','ABC','HELLO')from dual;
+select translate('ABCD ABGS ABCDEWA ABCSA','ABC','HELLO') from dual;
