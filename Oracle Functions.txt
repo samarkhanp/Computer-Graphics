@@ -1,0 +1,36 @@
+-- Arithmetic Functions
+-- =-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+select abs(-2) from dual;
+select abs(2) from dual;
+select ceil(2.1) from dual;
+select floor(2.9) from dual;
+select mod(4,2) from dual;
+select power(2,4) from dual;
+select round(2.1) from dual;
+select round(2.7) from dual;
+select trunc(2.334,1) from dual;
+select trunc(sqrt(2),4) from dual;
+select sign(2) from dual;
+select sign(0) from dual;
+select sign(-4) from dual;
+
+
+-- String Functions
+-- -=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-
+
+select length('hello') from dual;
+select lower('HeLOO') from dual;
+select upper('TestA') from dual;
+select initcap('HELLO WoRLd') from dual;
+select lpad('abc',5) from dual;
+select lpad('ABC',5,'@') from dual
+select rpad('ABC',5,'@') from dual;
+select ltrim('Hello World','ald') from dual;
+select ltrim('Hello World','Hld') from dual;
+select rtrim('HELLO WORLD','DLA') from dual;
+select substr('HELLO WORLD',0,2) from dual;
+select instr('SAMAR KHAN',' ')-1 from dual;
+select substr('ABCD',instr('SAMAR KHAN',' ')-1,10) test from dual;
+select replace('ABCD ABGS ABCDEW ABCSA','ABC','HELLO')from dual;
+select translate('ABCD ABGS ABCDEWA ABCSA','ABC','HELLO') from dual;
