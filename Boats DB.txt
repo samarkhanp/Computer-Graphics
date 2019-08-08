@@ -44,3 +44,13 @@ insert into Reserves (sid, bid, day) values (3, 101, '7-NOV-2017');
 insert into Reserves (sid, bid, day) values (3, 102, '7-AUG-2017');
 insert into Reserves (sid, bid, day) values (4, 103, '19-SEP-2017');
 
+
+
+-- ---------------------------------------------------------------------------------------
+
+select name,age from sailors;
+select * from sailors where rating>7;
+select S.name from sailors S,Reserves R where S.sid=R.sid and R.bid=103; 
+select  R.sid from Reserves R,Boats B where B.bid=R.bid and lower(B.color)='red'; 
+select B.color from Boats B,sailors S,Reserves R where S.sid=R.sid and B.bid=R.bid and S.name='Horatio';
+
