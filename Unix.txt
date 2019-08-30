@@ -1,0 +1,246 @@
+
+Sort On characters
+-=-=-=-=--=-=-=-=-=-=-
+
+:~$ cat >file1
+India
+Australia
+Us
+Pakistan
+^Z
+[1]+  Stopped                 cat > file1
+:~$ cat file1
+India
+Australia
+Us
+Pakistan
+:~$ sort file1
+Australia
+India
+Pakistan
+Us
+
+
+Sort On Numbers
+-=-=-=-=--=-=-=-=-=-=-
+
+:~$ cat >numbers
+1
+20
+40
+400
+300
+100
+^Z
+[2]+  Stopped                 cat > numbers
+:~$ sort numbers
+1
+100
+20
+300
+40
+400
+:~$ sort -n numbers
+1
+20
+40
+100
+300
+400
+
+
+Paste
+-=-=-=-=-
+
+:~$ cat >file1
+apple
+banana
+mango
+^Z
+[3]+  Stopped                 cat > file1
+:~$ cat >file2
+Jasmine
+rose
+tulip
+^Z
+[4]+  Stopped                 cat > file2
+:~$ cat >file3
+Brinjal
+Potato
+Tomato
+^Z
+[5]+  Stopped                 cat > file3
+:~$ cat file1
+apple
+banana
+mango
+:~$ cat file2
+Jasmine
+rose
+tulip
+:~$ cat file3
+Brinjal
+Potato
+Tomato
+:~$ paste file1 file2 file3
+apple   Jasmine Brinjal
+banana  rose    Potato
+mango   tulip   Tomato
+
+
+
+Comm
+-=-=-=
+:~$ cat >file1
+Australia
+Bangladesh
+Bhutan
+California
+^Z
+[6]+  Stopped                 cat > file1
+:~$ cat>file2
+Bangladesh
+California
+Delhi
+Mumbai
+^Z
+[7]+  Stopped                 cat > file2
+:~$ comm file1 file2
+Australia
+                Bangladesh
+Bhutan
+                California
+        Delhi
+        Mumbai
+
+Join
+-=-=-=-
+:~$ cat>file1
+1201 aaa 50
+1202 bbb 60
+1203 ccc 80
+^Z
+[8]+  Stopped                 cat > file1
+exam67@vignan-ThinkCentre-M71e:~$ cat>file2
+1201 c
+1202 b
+^Z
+[9]+  Stopped                 cat > file2
+exam67@vignan-ThinkCentre-M71e:~$ join file1 file2
+1201 aaa 50 c
+1202 bbb 60 b
+
+
+COMP
+-=-=-=
+e:~$ cat>file1
+This is a sample text file
+^Z
+[10]+  Stopped                 cat > file1
+exam67@vignan-ThinkCentre-M71e:~$ cat>file2
+This is another sample file
+^Z
+[11]+  Stopped                 cat > file2
+exam67@vignan-ThinkCentre-M71e:~$
+exam67@vignan-ThinkCentre-M71e:~$ cmp file1 file2
+file1 file2 differ: byte 10, line 1
+
+
+
+e:~$ echo "hello"
+hello
+exam67@vignan-ThinkCentre-M71e:~$ date
+Fri Aug 30 12:13:14 IST 2019
+exam67@vignan-ThinkCentre-M71e:~$ date -u
+Fri Aug 30 06:43:32 UTC 2019
+
+
+Celender
+-=-=-=-=-=-=-=
+e:~$ cal
+    August 2019
+Su Mo Tu We Th Fr Sa
+             1  2  3
+ 4  5  6  7  8  9 10
+11 12 13 14 15 16 17
+18 19 20 21 22 23 24
+25 26 27 28 29 30 31
+
+
+:~$ cal 12 2018
+   December 2018
+Su Mo Tu We Th Fr Sa
+                   1
+ 2  3  4  5  6  7  8
+ 9 10 11 12 13 14 15
+16 17 18 19 20 21 22
+23 24 25 26 27 28 29
+30 31
+
+:~$ cal 2019
+                            2019
+      January               February               March
+Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
+       1  2  3  4  5                  1  2                  1  2
+ 6  7  8  9 10 11 12   3  4  5  6  7  8  9   3  4  5  6  7  8  9
+13 14 15 16 17 18 19  10 11 12 13 14 15 16  10 11 12 13 14 15 16
+20 21 22 23 24 25 26  17 18 19 20 21 22 23  17 18 19 20 21 22 23
+27 28 29 30 31        24 25 26 27 28        24 25 26 27 28 29 30
+                                            31
+
+       April                  May                   June
+Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
+    1  2  3  4  5  6            1  2  3  4                     1
+ 7  8  9 10 11 12 13   5  6  7  8  9 10 11   2  3  4  5  6  7  8
+14 15 16 17 18 19 20  12 13 14 15 16 17 18   9 10 11 12 13 14 15
+21 22 23 24 25 26 27  19 20 21 22 23 24 25  16 17 18 19 20 21 22
+28 29 30              26 27 28 29 30 31     23 24 25 26 27 28 29
+                                            30
+
+        July                 August              September
+Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
+    1  2  3  4  5  6               1  2  3   1  2  3  4  5  6  7
+ 7  8  9 10 11 12 13   4  5  6  7  8  9 10   8  9 10 11 12 13 14
+14 15 16 17 18 19 20  11 12 13 14 15 16 17  15 16 17 18 19 20 21
+21 22 23 24 25 26 27  18 19 20 21 22 23 24  22 23 24 25 26 27 28
+28 29 30 31           25 26 27 28 29 30 31  29 30
+
+
+      October               November              December
+Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
+       1  2  3  4  5                  1  2   1  2  3  4  5  6  7
+ 6  7  8  9 10 11 12   3  4  5  6  7  8  9   8  9 10 11 12 13 14
+13 14 15 16 17 18 19  10 11 12 13 14 15 16  15 16 17 18 19 20 21
+20 21 22 23 24 25 26  17 18 19 20 21 22 23  22 23 24 25 26 27 28
+27 28 29 30 31        24 25 26 27 28 29 30  29 30 31
+
+e:~$ tty
+/dev/pts/46
+
+:~$ banner  samar
+
+  ####     ##    #    #    ##    #####
+ #        #  #   ##  ##   #  #   #    #
+  ####   #    #  # ## #  #    #  #    #
+      #  ######  #    #  ######  #####
+ #    #  #    #  #    #  #    #  #   #
+  ####   #    #  #    #  #    #  #    #
+
+:~$ bc
+bc 1.06.95
+Copyright 1991-1994, 1997, 1998, 2000, 2004, 2006 Free Software Foundation, Inc.
+This is free software with ABSOLUTELY NO WARRANTY.
+For details type `warranty'.
+sqrt(10)
+3
+for(i=0;i<5;i++)
+i
+0
+1
+2
+3
+4
+
+
+
+
