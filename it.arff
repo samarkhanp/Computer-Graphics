@@ -1,0 +1,66 @@
+@relation it
+
+@attribute Name string
+@attribute Regno string
+@attribute Address string
+@attribute Age real
+@attribute Gender {Male,Female}
+@attribute Percentage real
+@attribute BloodGroup {A,B,O,AB}
+@attribute Nptel {1,0}
+
+@data
+Sahaja,17L31A1212,Anakapalli,20,Female,80,A,1
+Harika,17L31A1214,NAD,20,Female,85,B,1
+Mahesh,17L31A1216,MVP,21,Male,78,O,0
+Pratyusha,17L31A1217,Jagadamba,20,Female,80,A,1
+Harsha,17L31A1219,Anakapalli,22,Male,81,B,1
+Venkat,17L31A1221,Anakapalli,21,Male,75,O,0
+Gowrav,17L31A1222,Seethamdhara,20,Male,75,A,1
+Geethika,17L31A1228,Vizag,21,Female,80,B,0
+Vikash,17L31A1229,Kurmanepalem,20,Male,75,O,1
+Hemanth,17L31A1230,Gajuwaka,20,Male,78,A,0
+Meenakshi,17L31A31,Hostel,19,Female,80,B,0
+Swetha,17L31A1234,Pedurthi,20,Female,81,O,1
+Abhilash,17L31A1235,NAD,21,Male,89,A,0
+Nikitha,17L31A1236,Hostel,19,Female,80,B,1
+Manisha,17L31A1237,Seethamdhara,20,Female,81,O,0
+Lokesh,17L31A1238,Kurmanepalem,21,Male,75,A,0
+MounikaT,17L31A1239,Pendurthi,21,Female,75,B,1
+Dhirendra,17L31A1240,Sriharipuram,21,Male,75,O,1
+Prasanna,17L31A1241,Gajuwaka,20,Female,78,A,0
+Shivani,17L31A1242,SteelPlant,21,Female,78,B,0
+Ramit,17L31A1243,Coromandel,22,Male,78,O,1
+Nashika,17L31A1246,Malkapuram,21,Female,78,A,0
+Chandu,17L31A1249,Ankapalli,19,Male,85,B,0
+Vasu,17L31A1258,Jagadamba,21,Male,85,O,1
+Bhuvaneshwari,17L31A1260,Gajuwaka,20,Female,80,A,0
+MounikaG,17L31A1261,Pedurthi,21,Female,81,B,0
+Prakash,17L31A1265,Yelamanchili,20,Male,80,O,1
+HariPriya,17L31A166,Hostel,20,Female,87,A,0
+Samar,17L31A1267,Malkapuram,20,Male,83,B,0
+Jyothsna,17L31A1268,SteelPlant,21,Female,80,O,1
+Sahiti,17L31A1269,BHPV,19,Female,85,A,0
+Srujana,17L31A1270,Vizag,21,Female,78,B,0
+Ramani,17L31A1274,Hostel,20,Female,85,O,1
+Pradeep,17L31A1273,Kurmanepalem,21,Male,75,A,0
+UdayBhanu,17L31A1276,Vizag,21,Female,78,B,0
+Lakshman,17L31A1278,Gajuwaka,20,Male,78,O,1
+HemaSundar,17L31A1279,Gajuwaka,21,Male,75,A,1
+DivyaSri,17L31A1280,Kurmanepalem,20,Female,85,B,0
+Pavan,17L31A1281,Maddilipalem,21,Male,80,O,1
+Gowthami,17L31A1282,Vizag,20,Female,81,A,0
+UdayKiran,17L31A1283,Chodavaram,21,Male,82,B,0
+Sailaja,17L31A1284,Vizag,20,Female,83,O,1
+MounikaK,17L31A1285,Vizag,21,Female,81,A,0
+Deepika,17L31A1287,Vizag,20,Female,79,B,0
+Sowmya,17L31A1288,BCRoad,21,Female,80,O,1
+RaviVarma,17L31A1289,Kurmanepalem,21,Male,89,A,0
+Mohan,17L31A1290,Yelamanchili,22,Male,81,B,0
+SriVenkat,17L31A1291,Gajuwaka,21,Male,82,O,1
+ShivaNarayana,17L31A1292,Kurmanepalem,20,Male,80,A,0
+PavanKalyanVarma,17L31A1294,Kurmanepalem,21,Male,84,B,0
+
+
+
+
