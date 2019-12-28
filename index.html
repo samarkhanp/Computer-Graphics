@@ -1,0 +1,124 @@
+<html>
+<head>
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+	<style>
+	body{
+	background-color: black;}
+	.calc{
+		margin-left: 38%;
+		margin-right: 41%;
+		margin-top: 210px;
+		border-radius: 20px;
+		
+		background-color: #D42E0B;
+		padding: 20px;
+		
+		
+	}
+	.calc:hover{
+		margin-left: 38%;
+		margin-right: 41%;
+		margin-top: 207px;
+		border-radius: 20px;
+
+		
+		padding: 20px;
+		
+		
+	}
+	.btn{
+	padding:5px;
+	width: 50px;
+	height: 50px;
+	padding-left: 5px;
+	border-radius: 50px;
+	margin: 3px;
+	font-weight: bold;
+	}
+	.btn:hover{
+	box-shadow: 5px 5px 10px #333;
+	}
+	#inp{
+	width: 230px;
+	height: 50px;
+	font-weight: bold;
+	border-radius: 20px;
+	background-color: black;
+	border-color: black;
+	color: white;
+	padding: 10px;
+	}
+	.btneq{
+	padding:5px;
+	width: 50px;
+	height: 50px;
+	padding-left: 5px;
+	border-radius: 50px;
+	background-color: BLACK;
+	COLOR: WHITE;
+	border-color:#D42E0B;
+	
+	}
+	.bod{
+	margin: 15px;
+	padding: 10px;
+	}
+	</style>
+	
+		<body>
+			<div class="calc" data-aos="fade-up">
+				<div class="bod" >
+				<form>
+					<input type="text" id="inp"><br><br>
+					<input type="button" value="1" class='btn' onclick="appen(1)">
+					<input type="button" value="2" class='btn' onclick="appen(2)">
+					<input type="button" value="3" class='btn' onclick="appen(3)">
+					<input type="button" value="C" class='btn' onclick="cl()">
+					<br><br>
+
+					<input type="button" value="4" class='btn' onclick="appen(4)">
+					<input type="button" value="5" class='btn' onclick="appen(5)">
+					<input type="button" value="6" class='btn' onclick="appen(6)">
+					<input type="button" value="<-" class='btn' onclick="trm()">
+					<br><br>
+
+					<input type="button" value="7" class='btn' onclick="appen(7)">
+					<input type="button" value="8" class='btn' onclick="appen(8)">
+					<input type="button" value="9" class='btn' onclick="appen(9)">
+					<input type="button" value="0" class='btn' onclick="appen(0)"><br><br>
+					<input type="button" value="+" class='btn' onclick="appen('+')">
+					<input type="button" value="-" class='btn' onclick="appen('-')">
+					<input type="button" value="X" class='btn' onclick="appen('*')">
+					<input type="button" value="=" class='btneq' onclick="eq()">
+				</form>
+				</div>
+			</div>
+			<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+			<script>
+				 AOS.init();
+			  function appen(n)
+			  {
+			    document.getElementById('inp').value+=n;
+			  }
+			   function cl()
+			  {
+			    document.getElementById('inp').value=0;
+			  }
+			  function eq()
+			  {
+			    document.getElementById('inp').value=eval(document.getElementById('inp').value);
+				
+				
+			  }
+			  function trm()
+			  {	
+				str=document.getElementById('inp').value;
+				 document.getElementById('inp').value= str.substring(0, str.length-1);
+			    
+				
+			  }
+			</script>
+		</body>
+</html>
