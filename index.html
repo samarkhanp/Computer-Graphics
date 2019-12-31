@@ -66,12 +66,12 @@
 	padding: 10px;
 	}
 	</style>
-	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<body>
-			<div class="calc" data-aos="fade-up">
-				<div class="bod" >
+			<div class="calc" data-aos="fade-up" id="calc">
+				<div class="bod" id="dataa">
 				<form>
-					<input type="text" id="inp"><br><br>
+					<input type="text" id="inp" disabled><br><br>
 					<input type="button" value="1" class='btn' onclick="appen(1)">
 					<input type="button" value="2" class='btn' onclick="appen(2)">
 					<input type="button" value="3" class='btn' onclick="appen(3)">
@@ -91,7 +91,8 @@
 					<input type="button" value="+" class='btn' onclick="appen('+')">
 					<input type="button" value="-" class='btn' onclick="appen('-')">
 					<input type="button" value="X" class='btn' onclick="appen('*')">
-					<input type="button" value="=" class='btneq' onclick="eq()">
+					<input type="button" value="=" class='btneq' onclick="eq()"><br><br>
+					<input type="button" value="OFF" class='btneq' onclick="clo()" style="margin-left: 100px;">
 				</form>
 				</div>
 			</div>
@@ -101,14 +102,23 @@
 			  function appen(n)
 			  {
 			    document.getElementById('inp').value+=n;
+				
 			  }
 			   function cl()
 			  {
 			    document.getElementById('inp').value=0;
 			  }
 			  function eq()
-			  {
-			    document.getElementById('inp').value=eval(document.getElementById('inp').value);
+			  { a=document.getElementById('inp').value;
+				try{
+				document.getElementById('inp').value=eval(document.getElementById('inp').value);
+				}
+			    catch(e){
+										
+				document.getElementById('inp').value="ENTER VALID INPUT"; 
+			setTimeout(function(){ document.getElementById('inp').value=0; }, 900);
+				
+				}
 				
 				
 			  }
@@ -117,6 +127,17 @@
 				str=document.getElementById('inp').value;
 				 document.getElementById('inp').value= str.substring(0, str.length-1);
 			    
+				
+			  }
+			  function clo()
+			  {
+				document.getElementById('dataa').remove();
+				document.getElementById('calc').innerHTML += '<input type="button" value="ON" class="btneq" onclick="ins()" style="margin-left: 100px;">';
+			  }
+			  function ins()
+			  {
+				str='<div class="bod" id="dataa"><form><input type="text" id="inp" disabled><br><br><input type="button" value="1" class="btn" onclick="appen(1)"><input type="button" value="2" class="btn" onclick="appen(2)"><input type="button" value="3" class="btn" onclick="appen(3)"><input type="button" value="C" class="btn" onclick="cl()"><br><br><input type="button" value="4" class="btn" onclick="appen(4)"><input type="button" value="5" class="btn" onclick="appen(5)"><input type="button" value="6" class="btn" onclick="appen(6)"><input type="button" value="<-" class="btn" onclick="trm()"><br><br><input type="button" value="7" class="btn" onclick="appen(7)"><input type="button" value="8" class="btn" onclick="appen(8)"><input type="button" value="9" class="btn" onclick="appen(9)"><input type="button" value="0" class="btn" onclick="appen(0)"><br><br><input type="button" value="+" class="btn" onclick="appen("+")"><input type="button" value="-" class="btn" onclick="appen("-")"><input type="button" value="X" class="btn" onclick="appen("*")"><input type="button" value="=" class="btneq" onclick="eq()"><br><br><input type="button" value="OFF" class="btneq" onclick="clo()" style="margin-left: 100px;"></form></div>';
+					document.getElementById('calc').innerHTML=str;
 				
 			  }
 			</script>
