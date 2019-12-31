@@ -1,0 +1,96 @@
+<html>
+	<style>
+	body{
+	
+	 background: dodgerblue;
+	 }
+	.main{
+	 
+	 margin-left:37%;
+	 margin-right: 36%;
+	 margin-top:20%;
+	}
+	.game{
+	   
+	   padding: 30px;
+	   padding-left: 100px;
+	}
+	.btn{
+	width: 60px;
+	height: 60px;
+	padding: 0px;}
+	</style>
+	<body>
+		<div class="main">
+			<div class="game">
+			<input type="button" class="btn" onclick="puta(1)" id="1" value="-">
+			<input type="button" class="btn" onclick="puta(2)" id="2" value="-">
+			<input type="button" class="btn" onclick="puta(3)" id="3" value="-"><br>
+			<input type="button" class="btn" onclick="puta(4)" id="4" value="-">
+			<input type="button" class="btn" onclick="puta(5)" id="5" value="-">
+			<input type="button" class="btn" onclick="puta(6)" id="6" value="-"><br>
+			<input type="button" class="btn" onclick="puta(7)"  id="7" value="-">
+			<input type="button" class="btn" onclick="puta(8)"  id="8" value="-">
+			<input type="button" class="btn" onclick="puta(9)" id="9" value="-"><br>
+			</div>
+			
+		</div>
+		<script>
+		  var i=0;
+		  var counter=0;
+			function puta(n)
+			{  if(i==0)
+				document.getElementById(n).value='X';
+				else
+				{
+				document.getElementById(n).value='O';
+				}
+				  document.getElementById(n).disabled = true; 
+				i++;
+				if(i>1)
+				 i=0;
+				 
+				 a=document.getElementById(1).value
+				b= document.getElementById(2).value
+				c= document.getElementById(3).value
+				d= document.getElementById(4).value
+				e= document.getElementById(5).value
+				f= document.getElementById(6).value
+				g= document.getElementById(7).value
+				h= document.getElementById(8).value
+				 j=document.getElementById(9).value
+				if(counter>0){
+				 if(a.localeCompare(b)==0 && b.localeCompare(c)==0 && a!="-" && b!="-" && c!="-")
+				 {
+				  alert(a+" WINS THE GAME");
+				 }
+				 if(d.localeCompare(e)==0 && e.localeCompare(f)==0 && d!="-" && e!="-" && f!="-")
+				 {
+				  alert(d+" WINS THE GAME");
+				 }
+				 if(g.localeCompare(h)==0 && h.localeCompare(j)==0 && g!="-" && h!="-" && j!="-")
+				 {
+				  alert(g+" WINS THE GAME");
+				 }if(a.localeCompare(d)==0 && d.localeCompare(g)==0 && a!="-" && d!="-" && g!="-")
+				 {
+				  alert(a+" WINS THE GAME");
+				 }if(b.localeCompare(e)==0 && e.localeCompare(h)==0 && b!="-" && e!="-" && h!="-")
+				 {
+				  alert(b+" WINS THE GAME");
+				 }if(c.localeCompare(f)==0 && f.localeCompare(j)==0 && c!="-" && f!="-" && j!="-")
+				 {
+				  alert(c+" WINS THE GAME");
+				 }if(a.localeCompare(e)==0 && e.localeCompare(j)==0 && a!="-" && e!="-" && j!="-")
+				 {
+				  alert(a+" WINS THE GAME");
+				 }if(c.localeCompare(e)==0 && e.localeCompare(g)==0 && c!="-" && e!="-" && g!="-")
+				 {
+				  alert(c+" WINS THE GAME");
+				 }
+				 }
+				 counter++;
+				 
+			}
+		</script>
+	</body>
+</html>
